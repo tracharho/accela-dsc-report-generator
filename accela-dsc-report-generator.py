@@ -114,7 +114,7 @@ def prepare_spreadsheets():
                
     ws['A1'].value = "Plan Revew Status Report"
     ws['A1'].style = 'Headline 1'
-    wb.save('C:\\Users\\TCRhodes\\Desktop\\Launch&LandingPad\\Plan Review Status Report.xlsx')
+    wb.save('')
     wb.close()
     
     #Preparing letter report
@@ -146,7 +146,7 @@ def prepare_spreadsheets():
     
     ws['A1'].value = "Review Letter Status Report"
     ws['A1'].style = 'Headline 1'
-    wb.save('C:\\Users\\TCRhodes\\Desktop\\Launch&LandingPad\\Review Letter Status Report.xlsx')
+    wb.save('')
     wb.close()
     print(plans_under_review, " Plans Under Review")
     print(late_letters, " Past Target Due Date")
