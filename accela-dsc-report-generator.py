@@ -3,7 +3,7 @@
 #Dynamically pathed downloading
 #variables for mouse positions
 #rescale window for other window
-    #code in to pull from latest download versus statically named file
+#code in to pull from latest download versus statically named file
 
 from pathlib import Path
 from selenium import webdriver
@@ -13,6 +13,7 @@ import pyautogui as pag
 import pandas as pd
 import time, os, shutil, openpyxl, datetime, re, os.path
 
+#Initializing pag waittime constants, path names, login information, 
 sel_wait_time = 0.2
 gui_wait_time = 0.5
 switch_wait_time = 2
@@ -30,13 +31,16 @@ today = datetime.datetime.today()
 column_widths_1 = {'A':20,'B':20,'C':50,'D':35,'E':25,'F':1,'G':30,'H':1,'I':20,'J':20,'K':20}
 column_widths_2 = {'A':20,'B':20,'C':13,'D':24,'E':60,'F':1,'G':25,'H':30,'I':1,'J':15,'K':12, 'L':12}
 
+#used to clear all files and directories in the downloads folder
 def clear_downloads():
     for root, dirs, files in os.walk(downloads):
         for file in files:
             os.remove(os.path.join(root, file))
 
-def login_and_download_reports():
-    
+#function used to login to Accela, and download the reports by using Selenium and 
+def login_and_download_reports():   
+    #the following are tuple values for the onscreen location of buttons required to be clicked
+    #by pyautogui
     Planning = (47,195)
     review_PM = (120,558)
     exit_button = (888,88)
